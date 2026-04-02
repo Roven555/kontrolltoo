@@ -1,5 +1,5 @@
 const fs = require("fs/promises");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const path = require("path");
 const express = require("express");
 
@@ -7,7 +7,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "..", "build")));
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -35,6 +35,6 @@ app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
 });
 
-app.listen(3001, () => console.log( `Server is running on port 3000`));
+app.listen(3001, () => console.log(`Server is running on port 3000`));
 
 //ulesanne2//
